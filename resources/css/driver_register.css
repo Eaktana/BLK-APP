@@ -1,0 +1,376 @@
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: #0d1a2f; /* Deep Navy Blue - เข้มแต่ไม่ดำสนิท */
+    color: #cad2e0; /* Light Slate Gray - สีข้อความที่นุ่มนวล */
+    line-height: 1.6;
+    overflow-x: hidden; /* ป้องกัน scrollbar แนวนอนจาก background effects */
+}
+
+/* Background Effects (ปรับให้เข้ากับโทนสีใหม่) */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px); /* เพิ่ม blur ให้ effect นุ่มนวลขึ้น */
+    opacity: 0.2; /* ลด opacity ให้ไม่รบกวนสายตามาก */
+    z-index: -1;
+}
+
+body::before {
+    background: radial-gradient(circle, rgb(59, 131, 246) 0%, rgba(0,0,0,0) 70%); /* Primary blue light */
+    width: 600px;
+    height: 600px;
+    top: -150px;
+    left: -150px;
+}
+
+body::after {
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(0,0,0,0) 70%); /* Secondary purple light */
+    width: 700px;
+    height: 700px;
+    bottom: -200px;
+    right: -200px;
+}
+
+.container {
+    max-width: 1100px; /* จำกัดความกว้างให้ดูสบายตาขึ้น */
+}
+
+/* Header Adjustments */
+h1 {
+    color: #e0e7ff; /* Lighter text for main heading */
+    font-weight: 700;
+}
+.text-primary {
+    color: #4a90e2 !important; /* Bright blue accent */
+}
+.text-secondary {
+    color: #aebfd7 !important; /* Softer secondary text */
+}
+.badge {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: none !important;
+    color: #e0e7ff !important;
+    padding: 0.5rem 1rem !important;
+    font-weight: 500;
+}
+.badge .bg-success {
+    background-color: #28a745 !important; /* Green for online status */
+}
+
+
+/* Card Styling - ทันสมัยขึ้น */
+.card {
+    background-color: rgba(32, 45, 68, 0.295); /* Darker blue with slight transparency */
+    border: 1px solid rgba(70, 90, 120, 0.3); /* Softer border */
+    border-radius: 1.25rem; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.1); /* Deeper, softer shadow */
+    transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+.card-body {
+    padding: 2.5rem !important; /* เพิ่ม padding ด้านใน */
+}
+.card-title {
+    color: #e0e7ff;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.border-bottom.border-secondary {
+    border-color: rgba(70, 90, 120, 0.4) !important; /* Border for section titles */
+}
+.bg-dark {
+    background-color: #1a2c4a !important; /* Darker background for icons */
+}
+.bg-dark.p-2 {
+    padding: 0.6rem !important;
+}
+.text-primary {
+    color: #4a90e2 !important;
+}
+.border-secondary {
+    border-color: rgba(70, 90, 120, 0.4) !important;
+}
+hr.text-secondary {
+    border-top: 1px solid rgba(70, 90, 120, 0.3) !important;
+    opacity: 0.8;
+}
+
+/* Form Elements - ปรับปรุงการใช้งานและรูปลักษณ์ */
+.form-label {
+    color: #aebfd7;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.form-control, .form-select {
+    background-color: #1a2c4a; /* Darker input background */
+    border: 1px solid #3d5a80; /* Blue-gray border */
+    color: #e0e7ff;
+    border-radius: 0.75rem; /* More rounded */
+    padding: 0.75rem 1rem; /* เพิ่ม padding */
+    transition: all 0.2s ease-in-out;
+}
+.form-control::placeholder {
+    color: #8c9bb4; /* Softer placeholder text */
+    opacity: 0.8;
+}
+.form-control:focus, .form-select:focus {
+    background-color: #1a2c4a;
+    border-color: #4a90e2; /* Bright primary blue focus */
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.3); /* Softer glow */
+}
+.form-select option {
+    background-color: #1a2c4a; /* Ensure options match input style */
+    color: #e0e7ff;
+}
+.form-control[readonly] {
+    background-color: #15243b; /* Slightly different background for readonly */
+    border-color: #2a3d5b;
+    color: #aebfd7;
+}
+
+/* Input Group Specifics */
+.input-group .form-select:first-child,
+.input-group .form-control:first-child {
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input-group .form-control:last-child {
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.input-group .form-control:focus {
+    z-index: 2; /* Fix border overlap on focus */
+}
+
+/* Upload Box Styling - ปรับให้ดูนุ่มนวลและทันสมัยขึ้น */
+.upload-box {
+    border: 2px dashed rgba(74, 144, 226, 0.4); /* Blue dashed border */
+    border-radius: 1rem; /* More rounded */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+    background-color: rgba(24, 39, 64, 0.6); /* Blended background */
+    height: 140px; /* เพิ่มความสูง */
+    color: #aebfd7;
+    font-weight: 500;
+}
+.upload-box:hover {
+    border-color: #4a90e2; /* Brighter blue on hover */
+    background-color: rgba(74, 144, 226, 0.15); /* Lighter blue tint */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
+}
+.upload-box i {
+    color: #4a90e2; /* Blue icon */
+    margin-bottom: 0.5rem;
+}
+.upload-box input[type="file"] {
+    cursor: pointer;
+}
+
+/* Safety Equipments */
+.bg-opacity-25 {
+    background-color: rgba(24, 39, 64, 0.8) !important; /* Use card background for these items */
+    border-color: rgba(70, 90, 120, 0.4) !important;
+    border-radius: 0.75rem;
+}
+.bg-success.rounded-circle {
+    background-color: #28a745 !important;
+}
+
+/* Helper Items */
+.helper-item {
+    border-color: #4a90e2 !important; /* Primary color for helper border */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.helper-item h6.helper-title {
+    color: #aebfd7;
+    margin-bottom: 1rem;
+}
+.helper-item .form-control, .helper-item .form-select {
+    padding: 0.6rem 0.8rem; /* Smaller padding for helper inputs */
+    border-radius: 0.6rem;
+}
+.helper-item .btn-link {
+    color: #ff6b6b !important; /* Red for remove button */
+    font-size: 0.9rem;
+    right: 15px !important;
+    top: 15px !important;
+    transition: color 0.2s;
+}
+.helper-item .btn-link:hover {
+    color: #e03b3b !important;
+}
+
+/* Emergency Contact Card */
+.card.border-danger.border-opacity-25 {
+    background: rgba(220, 53, 69, 0.08); /* Lighter, more subtle red background */
+    border-color: rgba(255, 99, 132, 0.4) !important; /* Softer red border */
+}
+.card.border-danger .card-title {
+    color: #ff6b6b !important; /* Brighter red title */
+}
+.card.border-danger .form-label,
+.card.border-danger .form-control::placeholder {
+    color: #ff8c8c !important; /* Lighter red text */
+}
+.card.border-danger .form-control,
+.card.border-danger .form-select {
+    background-color: rgba(255, 99, 132, 0.1); /* Red-tinted input background */
+    border-color: rgba(255, 99, 132, 0.5) !important;
+    color: #ffeded;
+}
+.card.border-danger .form-control:focus,
+.card.border-danger .form-select:focus {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 99, 132, 0.3) !important;
+}
+
+
+/* Action Buttons */
+.btn-outline-secondary {
+    border-color: #3d5a80;
+    color: #aebfd7;
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+}
+.btn-outline-secondary:hover {
+    background-color: #3d5a80;
+    color: #e0e7ff;
+}
+.btn-primary {
+    background-color: #4a90e2; /* Primary blue */
+    border-color: #4a90e2;
+    border-radius: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3); /* Subtle blue shadow */
+    transition: all 0.2s ease-in-out;
+}
+.btn-primary:hover {
+    background-color: #357edb; /* Darker blue on hover */
+    border-color: #357edb;
+    box-shadow: 0 7px 20px rgba(74, 144, 226, 0.4);
+    transform: translateY(-2px);
+}
+.btn-danger {
+    background-color: #e24a4a; 
+    border-color: #e24a4a;
+    border-radius: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(226, 74, 74, 0.3); 
+    transition: all 0.2s ease-in-out;
+}
+.btn-danger:hover {
+    background-color: #db3535; 
+    border-color: #db3535;
+    box-shadow: 0 7px 20px rgba(226, 74, 74, 0.4);
+    transform: translateY(-2px);
+}
+.btn-warning{
+    background-color: #e2b94a; 
+    border-color: #e2b94a;
+    border-radius: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(226, 185, 74, 0.3); 
+    transition: all 0.2s ease-in-out;
+}
+.btn-warning:hover {
+    background-color: #dbb94a; 
+    border-color: #dbb94a;
+    box-shadow: 0 7px 20px rgba(226, 185, 74, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments (Optional but Recommended) */
+/* เพิ่มโค้ดนี้ต่อท้ายไฟล์ CSS ที่คุณใช้ */
+
+@media (max-width: 767.98px) {
+    /* สำหรับหน้าจอโทรศัพท์มือถือ (ขนาดเล็กกว่า 768px) */
+    
+    /* เพิ่ม Padding ให้กับ Container หลัก */
+    /* ปกติ Bootstrap จะมี Padding อยู่แล้ว แต่เราสามารถเพิ่มความห่างได้อีก */
+    .container {
+        padding-left: 1.5rem !important; /* หรือ 24px */
+        padding-right: 1.5rem !important; /* ทำให้ห่างจากขอบซ้ายขวามากขึ้น */
+    }
+
+    /* หากต้องการให้ Card มีระยะห่างจากขอบจอมากขึ้นอีก */
+    .card {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    
+    /* ปรับขนาดฟอนต์หัวข้อหลักให้ไม่ใหญ่เกินไป */
+    h1.display-6 {
+        font-size: 2.25rem;
+    }
+
+    /* ปรับขนาดไอคอนและชื่อส่วนหัวใน Card */
+    .card-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* ============================= */
+
+/* UPLOAD PHOTO CONTAINER STYLES (New/Modified) */
+        
+/* Removed .upload-box styles as structure changed */
+
+.image-preview-box {
+    position: relative;
+    width: 100%;
+    height: 120px; /* Adjusted height for cleaner look */
+    background-color: #1a2c4a;
+    border: 2px dashed rgba(74, 144, 226, 0.4);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s;
+}
+.image-preview-box:hover {
+    border-color: #4a90e2;
+}
+
+.image-preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* Fade placeholder/sample image */
+    transition: opacity 0.3s;
+}
+
+.image-preview-box.has-image img {
+    opacity: 1; /* Full opacity when real image is loaded */
+}
+
+.image-preview-box .upload-icon {
+    position: absolute;
+    font-size: 2.5rem;
+    color: #4a90e2;
+    pointer-events: none; /* Ignore click on icon */
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.image-preview-box.has-image .upload-icon {
+    opacity: 0; /* Hide icon when image is present */
+}
+
+/* Ensure input field below preview looks normal */
+.image-upload-input {
+    padding: 0.5rem 1rem; /* Smaller padding for file input */
+}
+
