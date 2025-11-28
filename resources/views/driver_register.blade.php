@@ -146,7 +146,7 @@
                                         <!-- Image Preview/Placeholder Area -->
                                         <div class="image-preview-box" id="preview_car_photo_front">
                                             <!-- Placeholder Image: Simple front view (using placeholder service) -->
-                                            <img src="{{ Vite::asset('resources/assets/images/img_truck_front.png') }}" alt="ตัวอย่างรูปด้านหน้า" class="sample-image" style="cursor:pointer;"  onclick="window.open(this.src, '_blank')">
+                                            <img src="{{ asset('images/img_truck_front.png') }}" alt="ตัวอย่างรูปด้านหน้า" class="sample-image" style="cursor:pointer;"  onclick="window.open(this.src, '_blank')">
                                         </div>
                                         
                                         <label class="form-label small text-secondary mb-1">ด้านหน้า</label>
@@ -157,7 +157,7 @@
                                     <div class="col-md-3 col-6">
                                         <div class="image-preview-box" id="preview_car_photo_back">
                                             <!-- Placeholder Image: Simple back view -->
-                                            <img src="{{ Vite::asset('resources/assets/images/img_truck_rear.png') }}" alt="ตัวอย่างรูปด้านหลัง" class="sample-image" style="cursor:pointer;"  onclick="window.open(this.src, '_blank')">
+                                            <img src="{{asset('images/img_truck_rear.png') }}" alt="ตัวอย่างรูปด้านหลัง" class="sample-image" style="cursor:pointer;"  onclick="window.open(this.src, '_blank')">
                                         </div>
                                         <label class="form-label small text-secondary mb-1">ด้านหลัง</label>
                                         <input type="file" name="car_photo_back" class="form-control form-control-sm image-upload-input" accept="image/*" onchange="previewImage(this, 'preview_car_photo_back')">
@@ -166,7 +166,7 @@
                                     <div class="col-md-3 col-6">
                                         <div class="image-preview-box" id="preview_car_photo_left">
                                             <!-- Placeholder Image: Simple side view (left) -->
-                                            <img src="{{ Vite::asset('resources/assets/images/img_truck_left.png') }}" alt="ตัวอย่างรูปด้านซ้าย" class="sample-image" style="cursor:pointer;"  onclick="window.open(this.src, '_blank')">
+                                            <img src="{{asset('images/img_truck_left.png') }}" alt="ตัวอย่างรูปด้านซ้าย" class="sample-image" style="cursor:pointer;"  onclick="window.open(this.src, '_blank')">
                                         </div>
                                         <label class="form-label small text-secondary mb-1">ด้านซ้าย</label>
                                         <input type="file" name="car_photo_left" class="form-control form-control-sm image-upload-input" accept="image/*" onchange="previewImage(this, 'preview_car_photo_left')">
@@ -175,7 +175,7 @@
                                     <div class="col-md-3 col-6">
                                         <div class="image-preview-box" id="preview_car_photo_right">
                                             <!-- Placeholder Image: Simple side view (right) -->
-                                            <img src="{{ Vite::asset('resources/assets/images/img_truck_right.png') }}" alt="ตัวอย่างรูปด้านขวา" class="sample-image" style="cursor:pointer;"  onclick="window.open(this.src, '_blank')">
+                                            <img src="{{asset('images/img_truck_right.png') }}" alt="ตัวอย่างรูปด้านขวา" class="sample-image" style="cursor:pointer;"  onclick="window.open(this.src, '_blank')">
                                         </div>
                                         <label class="form-label small text-secondary mb-1">ด้านขวา</label>
                                         <input type="file" name="car_photo_right" class="form-control form-control-sm image-upload-input" accept="image/*" onchange="previewImage(this, 'preview_car_photo_right')">

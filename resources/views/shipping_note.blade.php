@@ -82,7 +82,7 @@
     <div class="container">
         <div class="container-header">
             <div class="page-title">
-                <img src="{{ Vite::asset('resources/assets/images/BKL_HEADER.png') }}" alt="" class="img-header"  style="width:200px; height:auto;">
+                <img src="{{asset('images/BKL_HEADER.png') }}" alt="" class="img-header"  style="width:200px; height:auto;">
                 <div>เอกสารจัดส่งสินค้า (Shipping Note)</div>
             </div>
             <div class="header-detail">
