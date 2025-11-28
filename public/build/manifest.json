@@ -1,0 +1,32 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-tn0RQdqM.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/css/driver_register.css": {
+    "file": "assets/driver_register-C_2Aet06.css",
+    "src": "resources/css/driver_register.css",
+    "isEntry": true,
+    "name": "driver_register",
+    "names": [
+      "driver_register.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CAiCLEjY.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/driver_register.js": {
+    "file": "assets/driver_register-Bemukf9h.js",
+    "name": "driver_register",
+    "src": "resources/js/driver_register.js",
+    "isEntry": true
+  }
+}
