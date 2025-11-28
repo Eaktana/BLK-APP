@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 // 1. ดึง Controller มาใช้
+use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\RegisterController; 
+use App\Http\Controllers\DriverJobController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -27,3 +30,16 @@ Route::put('/drivers/{driver}', [RegisterController::class, 'update'])->name('dr
 Route::get('/drivers/update/success', function () {
     return view('driver_edit_success');
 })->name('drivers.update.success');
+
+
+
+Route::get('/shipping/{id}', [ShippingController::class, 'show'])
+     ->name('shipping.show');
+Route::get('/job/mock', [ShippingController::class, 'showMock'])
+    ->name('job.mock');
+
+
+Route::get('/driver/jobs', [DriverJobController::class, 'index'])->name('driver.jobs');
+Route::get('/driver/jobs/{id}', [DriverJobController::class, 'show'])->name('driver.jobs.show');
+Route::get('/driver/jobs/{id}/accept', [DriverJobController::class, 'accept'])->name('driver.jobs.accept');
+

@@ -36,6 +36,11 @@ body::after {
     max-width: 1100px; /* จำกัดความกว้างให้ดูสบายตาขึ้น */
 }
 
+.container-full {
+    max-width: 90%;
+    margin: 0 auto; /* ใช้เต็มความกว้างหน้าจอ */
+}
+
 /* Header Adjustments */
 h1 {
     color: #e0e7ff; /* Lighter text for main heading */
@@ -62,7 +67,14 @@ h1 {
 /* Card Styling - ทันสมัยขึ้น */
 .card {
     background-color: rgba(32, 45, 68, 0.295); /* Darker blue with slight transparency */
-    border: 1px solid rgba(70, 90, 120, 0.3); /* Softer border */
+    border: 1px solid rgba(158, 162, 168, 0.3); /* Softer border */
+    border-radius: 1.25rem; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.1); /* Deeper, softer shadow */
+    transition: transform 0.2s ease-in-out;
+}
+.card-mini {
+    background-color: rgba(39, 55, 83, 0.295); /* Darker blue with slight transparency */
+    border: 1px solid rgba(118, 127, 139, 0.3); /* Softer border */
     border-radius: 1.25rem; /* More rounded corners */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.1); /* Deeper, softer shadow */
     transition: transform 0.2s ease-in-out;
@@ -71,13 +83,14 @@ h1 {
     transform: translateY(-3px); /* Slight lift on hover */
 }
 .card-body {
-    padding: 2.5rem !important; /* เพิ่ม padding ด้านใน */
+    padding: 1; /* เพิ่ม padding ด้านใน */
 }
 .card-title {
     color: #e0e7ff;
     font-weight: 600;
     font-size: 1.5rem;
 }
+
 .border-bottom.border-secondary {
     border-color: rgba(70, 90, 120, 0.4) !important; /* Border for section titles */
 }
@@ -374,3 +387,45 @@ hr.text-secondary {
     padding: 0.5rem 1rem; /* Smaller padding for file input */
 }
 
+.text-center .btn {
+    align-items: center;
+    justify-items: center;
+}
+
+
+
+/* ลบพื้นหลังตารางทุกระดับ */
+.brand-table,
+.brand-table thead,
+.brand-table tbody,
+.brand-table tr,
+.brand-table th,
+.brand-table td {
+    background: transparent !important;
+}
+
+/* เส้นคั่นหัวตาราง */
+.brand-table thead th {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    font-weight: 600;
+    color: #e0e7ff;
+}
+
+/* เส้นคั่นระหว่างแถว */
+.brand-table tbody td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/* ปิดเส้นซ้ายขวา */
+.brand-table th,
+.brand-table td {
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* ปิด hover effect ของ bootstrap */
+.brand-table tbody tr:hover td {
+    background: transparent !important;
+}
